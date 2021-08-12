@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // @templates之前在webpack.config.js里面配置过，代表./src/components这个路径的简写
 // @templates/home 就是home.vue
 import Home from '@templates/home'
+import app from '@templates/app'
 
 Vue.use(VueRouter)
     // 防止路由跳转报错
@@ -14,7 +15,8 @@ VueRouter.prototype.push = function push(location) {
 
 // 导出路由
 export default new VueRouter({
-    routes: [{
+    routes: [
+        {
             path: '/',
             component: Home
         },
@@ -22,6 +24,11 @@ export default new VueRouter({
         {
             path: '/home',
             redirect: '/'
+        },
+        {
+            path:'/app',
+            name:'app',
+            component: app
         }
     ]
 })

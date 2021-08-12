@@ -1,9 +1,14 @@
 import Vue from 'vue'
-// ./src/app就是./src/app.vue
-import App from './src/app'
+// ./src/index./src/index.vue
+import index from './src/index'
 import '@assets/styles/global.css'
+import router from './router'
+import VueRouter from 'vue-router'
 
-// 把app.vue挂在到index.html中id为app的节点下
+Vue.use(VueRouter)
+
+// index.vue挂在到index.html中id为app的节点下
 new Vue({
-    render: h => h(App)
+    router,
+    render: h => h(index)
 }).$mount('#app')

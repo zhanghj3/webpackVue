@@ -17,6 +17,12 @@ export default {
     Header,
     Footer,
     Todo
+  },
+  mounted(){
+    // query接收路由参数
+    // alert(this.$route.query.id)
+    // params接收路由参数
+    alert(this.$route.params.id)
   }
 }
 </script>
